@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content= "width=device-width, user-scalable=no">
+    <div id="container">
+        
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        
+      #mainTable {
+        
+           position: relative;
+           width: 370px;
+           height: 450px;
+           background-color: rgb(49, 51, 51);
+           border-radius: 13px;
+           padding: 11px;
+           padding-bottom: 200;
+        }h2{
+            color: #e2e4e4;
+            
+            text-align: center;
+            font-size: 19px;
+            font-style: bold;
+        }
+
+    .arrows {
+      place-items: center;
+        text-align: center;
+        margin: 48;
+      font-size:30px;
+      color:red;
+    }
+    
+    td.button {
+      height: 50px;
+      place-items: center;
+        text-align: center;
+      background-color:white;
+      border-radius:20px;
+      box-shadow: none;
+    }
+    td.button:active {
+      place-items: center;
+        text-align: center;
+      transform: translate(12px,12px);
+      box-shadow: none; 
+    }
+
+    .noselect {
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome and Opera */
+    }@media only screen and (max-width: 330px){
+      .slider::-moz-range-thumb{
+        width: 90%;
+        height: 90%;
+        visibility: collapse;
+
+      }
+      .arrows{
+        visibility: collapse;
+
+      }.noselect{
+        visibility: collapse;
+
+      }.slidecontainer{
+        visibility: collapse;
+
+      }.slider{
+        visibility: collapse;
+
+      }.slider::-webkit-slider-thumb{
+        visibility: collapse;
+
+      }.slider:hover{
+        visibility: collapse;
+
+      }.onCameraWebSocketEvent{
+        visibility: collapse;
+
+      }.onCameraWebSocketEvent{
+        visibility: collapse;
+
+      }.setupCamera{
+        visibility: collapse;
+
+      }.sendCameraPicture{
+        visibility: collapse;
+
+      }.setUpPinModes{
+        visibility: collapse;
+
+      }.setup{
+        visibility: collapse;
+
+      }.initCameraWebSocket{
+        visibility: collapse;
+
+      }
+    }
+
+    .slidecontainer {
+        display: flex;
+      align-items: center;
+      justify-content: left;
+      display: grid;
+      place-items: center;
+        text-align: center;
+      width: 90%;
+      
+    }
+
+    .slider {
+      place-items: center;
+        text-align: center;
+        margin: 7;
+        margin-right: 30px;
+      -webkit-appearance: none;
+      width: 100%;
+      height: 25px;
+      border-radius: 11px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      place-items: center;
+        text-align: center;
+      opacity: 1;
+    }
+  
+    .slider::-webkit-slider-thumb {
+      place-items: center;
+        text-align: center;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50px;
+      background: red;
+      cursor: pointer;
+    }
+    
+
+    .slider::-moz-range-thumb {
+      place-items: center;
+        text-align: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+    }
+    .center{
+     
+      font-size: 13px;
+     align-items: center;
+
+    }
+    .imge{
+     width: 350px;
+     height:350px;
+     object-fit: cover;
+     
+    }.img{
+      tab-size: 350px;
+      width:350px;
+     height:350px;
+     object-fit: cover;
+    }img{
+        border: 1px solid #00fffc;
+    } img {
+          transform: rotate(180deg);
+         }img{
+            
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+         }
+
+
+    </style>
+  
+  </head>
+  
+  
+  <body class="noselect" align="center" style="background-color:rgb(63, 61, 61)">
+    <table id="mainTable" style="width:400px;margin:auto;table-layout:fixed" CELLSPACING=15>
+      <tr>
+        <img id="cameraImage" src="" style="width:400px;height:250px"></td>
+      </tr> 
+      <tr>
+        <td></td>
+        <td class="button" ontouchstart='sendButtonInput("MoveCar","1")' ontouchend='sendButtonInput("MoveCar","0")'><span class="text-align:center" ><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular';color: rgb(10, 133, 240);font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">پێشەوە</b></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="button"  ontouchstart='sendButtonInput("MoveCar","3")' ontouchend='sendButtonInput("MoveCar","0")'><span class="text-align:center" ><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular';color: rgb(10, 133, 240);font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">چەپ</b></span></td>
+        <td ><pading ></pading></td> 
+        
+
+        
+        <td class="button" ontouchstart='sendButtonInput("MoveCar","4")' ontouchend='sendButtonInput("MoveCar","0")'><span class="text-align:center" ><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular';color: rgb(10, 133, 240);font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">راست</b></span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="button" ontouchstart='sendButtonInput("MoveCar","2")' ontouchend='sendButtonInput("MoveCar","0")'><span class="text-align:center" ><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular';color: rgb(10, 133, 240);font-size: 20px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">دواوە</b></span></td>
+        <td></td>
+      </tr>
+      <tr/><tr/>
+      <tr>
+        <td style="text-align:center"><b style="color: aliceblue;font-size: 19px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">خێرای ⚙️:</b></td>
+        <td colspan=2>
+         <div class="slidecontainer">
+            <input type="range" min="0" max="255" value="127.5" class="slider" id="Speed" oninput='sendButtonInput("Speed",value)'>
+          </div>
+        </td>
+      </tr>        
+      <tr>
+        <td style="text-align:center"><b style="color: aliceblue;font-size: 19px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">روناکی💡  :</b></td>
+        <td colspan=2>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="255" value="0" class="slider" id="Light" oninput='sendButtonInput("Light",value)'>
+          </div>
+        </td>   
+      </tr>
+      <tr>
+        <td style="text-align:center"><b style="color: aliceblue;font-size: 19px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">⬅️جولەی➡️:</b></td>
+        <td colspan=2>
+         <div class="slidecontainer">
+            <input type="range" min="0" max="180" value="45" class="slider" id="Pan" oninput='sendButtonInput("Pan",value)'>
+          </div>
+        </td>
+      </tr> 
+      <tr>
+        <td style="text-align:center"><b style="color: aliceblue;font-size: 19px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">⬆️جولەی ⬇️:</b></td>
+        <td colspan=2>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="180" value="160" class="slider" id="Tilt" oninput='sendButtonInput("Tilt",value)'>
+          </div>
+        </td>   
+      </tr>      
+    </table>
+  
+    <script>
+      var webSocketCameraUrl = "ws:\/\/" + window.location.hostname + "/Camera";
+      var webSocketCarInputUrl = "ws:\/\/" + window.location.hostname + "/CarInput";      
+      var websocketCamera;
+      var websocketCarInput;
+      
+      function initCameraWebSocket() 
+      {
+        websocketCamera = new WebSocket(webSocketCameraUrl);
+        websocketCamera.binaryType = 'blob';
+        websocketCamera.onopen    = function(event){};
+        websocketCamera.onclose   = function(event){setTimeout(initCameraWebSocket, 2000);};
+        websocketCamera.onmessage = function(event)
+        {
+          var imageId = document.getElementById("cameraImage");
+          imageId.src = URL.createObjectURL(event.data);
+        };
+      }
+      
+      function initCarInputWebSocket() 
+      {
+        websocketCarInput = new WebSocket(webSocketCarInputUrl);
+        websocketCarInput.onopen    = function(event)
+        {
+          sendButtonInput("Speed", document.getElementById("Speed").value);
+          sendButtonInput("Light", document.getElementById("Light").value);
+          sendButtonInput("Pan", document.getElementById("Pan").value);
+          sendButtonInput("Tilt", document.getElementById("Tilt").value);                    
+        };
+        websocketCarInput.onclose   = function(event){setTimeout(initCarInputWebSocket, 2000);};
+        websocketCarInput.onmessage = function(event){};        
+      }
+      
+      function initWebSocket() 
+      {
+        initCameraWebSocket ();
+        initCarInputWebSocket();
+      }
+
+      function sendButtonInput(key, value) 
+      {
+        var data = key + "," + value;
+        websocketCarInput.send(data);
+      }
+    
+      window.onload = initWebSocket;
+      document.getElementById("mainTable").addEventListener("touchend", function(event){
+        event.preventDefault()
+      });      
+    </script>
+     
+     
+
+     
+     <h2>دیزاینو پەرەپێدانی لەلایەن : سەهەند ستار محمد</h2>
+  </body> 
+</div>   
+</html>
